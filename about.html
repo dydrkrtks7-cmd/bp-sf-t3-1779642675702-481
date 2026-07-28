@@ -247,84 +247,47 @@
 </head>
 <body>
 
-<nav>
-    <div class="logo"><a href="/">◈ 웜업 PBN</a></div>
-    <ul id="nav-menu">
-        <li><a href="/">홈</a></li>
-        <li><a href="/info">정보</a></li>
-        <li><a href="/pricing">가격</a></li>
-        <li><a href="/contact">연락</a></li>
-    </ul>
-    <div class="hamburger-menu" onclick="document.getElementById('nav-menu').classList.toggle('active')">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</nav>
+<main>
+<section class="hero container text-center">
+<p class="small">마포 지역 서비스 정보</p>
+<h1>PBN 빌더와 서버 웜업, 기본 개념 정리</h1>
+<p>이 페이지는 PBN 빌더 서비스와 서버 웜업 절차에 대해 처음 접하는 사람이 궁금해할 만한 기본 정보를 정리한 안내 페이지다. 용어와 절차를 항목별로 나눠 정리했으니 필요한 부분만 골라 확인해도 무방하다.</p>
+</section>
+<section class="container">
+<h2>PBN 빌더란</h2>
+<div class="grid-2">
+<div class="card"><h3>구성 방식</h3><p>PBN 빌더는 여러 사이트를 하나의 체계로 관리하기 위한 구축 도구를 가리키는 명칭으로 쓰인다. 사이트 등록, 도메인 연결, 콘텐츠 배포 등의 절차를 하나의 흐름으로 정리하는 데 초점을 둔다.</p></div>
+<div class="card"><h3>서버 웜업과의 관계</h3><p>새로 연결된 서버나 도메인은 트래픽과 색인이 안정화되기까지 시간이 걸리는데, 이 과정을 서버 웜업이라 부른다. PBN 빌더 운영에서는 이 단계를 관리 절차에 포함해 다루는 경우가 많다.</p></div>
+</div>
+</section>
+<section class="container grid-3">
+<div class="card mt-2"><h3 class="color-accent">1단계</h3><p>도메인과 서버 연결 상태 확인</p></div>
+<div class="card mt-2"><h3 class="color-accent">2단계</h3><p>콘텐츠 배포 및 색인 요청</p></div>
+<div class="card mt-2"><h3 class="color-accent">3단계</h3><p>트래픽 안정화 관찰 및 점검</p></div>
+</section>
+<section class="container">
+<h2>용어 정리</h2>
+<div class="grid-2">
+<div class="card"><h3>PBN</h3><p>여러 사이트를 연계해 관리하는 구조를 가리키는 용어로 쓰인다.</p></div>
+<div class="card"><h3>서버 웜업</h3><p>신규 서버나 도메인이 안정적으로 트래픽을 받아들이기까지의 준비 단계를 뜻한다.</p></div>
+<div class="card"><h3>색인</h3><p>검색엔진이 페이지 정보를 수집해 검색 결과에 반영하는 과정을 뜻한다.</p></div>
+<div class="card"><h3>도메인 연결</h3><p>새로 등록한 도메인을 서버와 연결해 서비스 가능한 상태로 만드는 절차를 뜻한다.</p></div>
+<div class="card"><h3>콘텐츠 배포</h3><p>작성한 페이지를 서버에 반영해 실제로 접속 가능한 상태로 만드는 절차를 뜻한다.</p></div>
+</div>
+</section>
+<section class="container mb-2">
+<h2>자주 묻는 질문</h2>
+<div class="faq-item"><h3>PBN 빌더는 어떤 경우에 쓰이나요?</h3><p>여러 사이트를 동시에 관리하거나 신규 도메인을 체계적으로 운영하려는 경우에 참고되는 방식이다.</p></div>
+<div class="faq-item"><h3>서버 웜업은 얼마나 걸리나요?</h3><p>서버와 도메인 상태에 따라 소요 기간이 달라질 수 있어 일괄적으로 말하기는 어렵다.</p></div>
+<div class="faq-item"><h3>마포 지역과 관련이 있나요?</h3><p>운영 거점이 마포에 있는 경우를 기준으로 안내되는 정보이며, 세부 사항은 문의를 통해 확인할 수 있다.</p></div>
+<div class="faq-item"><h3>웜업 단계에서 무엇을 점검하나요?</h3><p>서버 연결 상태, 콘텐츠 배포 여부, 색인 요청 결과 등을 순서대로 점검하는 것이 일반적이다.</p></div>
+</section>
+<section class="container text-center bg-accent border-accent">
+<p class="mono">문의</p>
+<a class="tel-link" href="tel:010-6279-0862">010-6279-0862</a>
+</section>
+</main>
 
-<main class="container">
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>정보: 당신이 몰랐던 <span class="color-accent">서버 웜업</span>의 진실</h1>
-        <p>마포에서 10년. 24시간 콜드 스타트를 제거하고 PBN을 실제로 굴리는 방법. 나는 이 업계의 가짜를 그만뒀다. 지금 전화해라, 증명해준다.</p>
-        <div class="mt-2">
-            <a href="tel:010-6279-0862" class="tel-link">☎ 010-6279-0862</a>
-        </div>
-    </section>
 
-    <!-- DETAILED INFO CARDS (grid-3) -->
-    <h2>왜 우리가 <span class="color-accent">진짜</span>인가</h2>
-    <div class="grid-3 mt-2">
-        <div class="card">
-            <h3>콜드 스타트? <span class="color-accent">없음</span></h3>
-            <p>당신의 서버가 첫 요청에서 200ms 걸린다면? 나는 5ms로 응답한다. 24시간 글로벌 노드 웜업. 내가 직접 설계한 인프라다. 장사 아니다, 공학이다.</p>
-        </div>
-        <div class="card">
-            <h3>PBN 빌더 — <span class="color-accent">진짜</span></h3>
-            <p>대행사들이 파는 가짜 PBN. 도메인 나이만 있고 콘텐츠 없는 쓰레기. 나는 실제 트래픽, 실제 백링크, 실제 서버 로그를 보여준다. 마포에서 직접 운영.</p>
-        </div>
-        <div class="card">
-            <h3>네트워크 <span class="color-accent">최적화</span></h3>
-            <p>라우팅 테이블부터 BGP 피어링까지. 10년차 엔지니어가 당신의 구조를 갈아엎는다. 결과: 더 빠른 로딩, 더 높은 순위, 더 적은 비용.</p>
-        </div>
-    </div>
-
-    <!-- 테크니컬 디테일 + MAP (grid-2) -->
-    <h2 class="mt-2">마포 <span class="color-accent">본사</span> — 왜 여기인가</h2>
-    <div class="grid-2 mt-2">
-        <div>
-            <p><strong>마포구 상암동</strong> — 대한민국 인터넷의 허브 중 하나. KT, SKB, LG의 백본이 교차하는 지점. 지연 1ms 이하. 나는 이곳에 서버 랙을 직접 설치한다.</p>
-            <p>당신이 서울 어디에 있든, 물리적 거리는 의미 없다. 내가 구축한 노드는 이미 당신 근처에 있다. <span class="color-accent">PBN 빌더는 위치가 아니라 연결이다.</span></p>
-            <ul class="mono" style="margin-top:1rem;">
-                <li>✓ 24/7 글로벌 웜업</li>
-                <li>✓ 콜드 스타트 0건 (지난 30일)</li>
-                <li>✓ 평균 응답 12ms</li>
-                <li>✓ PBN 네트워크 47개 노드</li>
-            </ul>
-        </div>
-        <div class="card" style="background:#111;">
-            <h3>직접 보여준다</h3>
-            <p>나는 스크린샷이나 대시보드 미화를 하지 않는다. 원한다면 내 서버에 SSH로 접속해라. 로그를 까보라. 진짜는 숨기지 않는다.</p>
-            <p style="border-left: 4px solid #ff00cc; padding-left:1rem;">“결과로 말한다. 010-6279-0862”</p>
-        </div>
-    </div>
-
-    <!-- FAQ -->
-    <h2 class="mt-2">자주 묻는 <span class="color-accent">도발</span></h2>
-    <div class="faq-item">
-        <h4>Q: “PBN 빌더가 뭔데? 그냥 링크 사이트 아냐?”</h4>
-        <p>A: 그런 쓰레기랑 비교하지 마라. 내 PBN은 각 사이트가 독립된 서버, 독립된 IP, 실제 콘텐츠, 실제 방문자를 가진다. 검색 엔진이 좋아하는 구조다. 당신이 원하는 건 링크가 아니라 권위다.</p>
-    </div>
-    <div class="faq-item">
-        <h4>Q: “콜드 스타트 제거가 가능해?”</h4>
-        <p>A: 당연하다. 서버를 꺼놓지 않으면 된다. 근데 이게 끝이 아니다. 프리웜, 커넥션 풀, 캐시 워밍… 내가 만든 시스템은 요청이 오기도 전에 준비되어 있다. 네가 잠잘 때도.</p>
-    </div>
-    <div class="faq-item">
-        <h4>Q: “마포 말고 다른 지역은?”</h4>
-        <p>A: 마포가 본사이지만 내 노드는 전 세계 12개 리전에 있다. 도쿄, 싱가포르, 프랑크푸르트, 버지니아… 당신이 타겟하는 시장이 어디든 커버한다. 단, 계약은 마포에서 한다. 직접 만나자.</p>
-    </div>
-    <div class="faq-item">
-        <h4>Q: “가격이 어떻게 되나요?”</h4>
-        <p>A: 맞춤 견적. 내가 당신의 인프라를 분석하고, 필요한 노드 수와 웜업 범위를 정한다. 최소 50만원부터 시작하지만, 그만큼의 가치를 보장한다.
 </body>
 </html>
