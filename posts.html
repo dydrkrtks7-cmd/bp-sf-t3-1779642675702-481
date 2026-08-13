@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-481</title>
+  <meta name="description" content="sf-t3-1779642675702-481에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-481.maphoshirts.today/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* RESET + BASE */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ html { font-size: 16px; scroll-behavior: smooth; }
+ body {
+ font-family: Impact, 'Arial Black', system-ui, sans-serif;
+ background: #000;
+ color: #fff;
+ line-height: 1.15;
+ padding: 0;
+ min-height: 100vh;
+ overflow-x: hidden;
+ }
+ img { display: block; max-width: 100%; }
+ a { color: inherit; text-decoration: none; }
+ ul { list-style: none; }
+
+ /* TYPOGRAPHY */
+ h1, h2, h3, h4 { font-weight: 400; letter-spacing: -0.02em; }
+ h1 { font-size: clamp(3.2rem, 8vw, 6rem); line-height: 0.9; text-transform: uppercase; }
+ h2 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+ h3 { font-size: 1.8rem; }
+ p, li, blockquote { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; line-height: 1.5; font-size: 1.1rem; }
+ .mono { font-family: 'Courier New', Courier, monospace; letter-spacing: 0.05em; }
+
+ /* COLORS */
+ .color-accent { color: #ff3b00; }
+ .bg-accent { background: #ff3b00; }
+ .border-accent { border-color: #ff3b00; }
+ .border-white { border-color: #fff; }
+ .border-black { border-color: #000; }
+
+ /* SPACING */
+ .gap-48 { gap: 48px; }
+ .pad-72 { padding: 72px; }
+ .section-gap { margin-bottom: 120px; }
+
+ /* LAYOUT */
+ .full-bleed { width: 100%; max-width: none; }
+ .asymmetric {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ @media (max-width: 768px) {
+ .asymmetric { grid-template-columns: 1fr; gap: 32px; }
+ .pad-72 { padding: 40px 24px; }
+ }
+
+ /* BRUTALIST BORDERS */
+ .brutal-border { border: 4px solid #fff; }
+ .brutal-border-accent { border: 4px solid #ff3b00; }
+ .brutal-border-black { border: 4px solid #000; }
+
+ /* SKEW / ROTATE */
+ .skew-2 { transform: skew(-2deg); }
+ .skew-4 { transform: skew(-4deg); }
+ .rotate-2 { transform: rotate(2deg); }
+ .rotate-neg { transform: rotate(-3deg); }
+
+ /* OVERLAP */
+ .overlap-right { margin-right: -48px; }
+ .overlap-left { margin-left: -48px; }
+ @media (max-width: 768px) {
+ .overlap-right, .overlap-left { margin: 0; }
+ }
+
+ /* BUTTONS */
+ .btn-raw {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000;
+ border: 4px solid #000;
+ padding: 16px 48px;
+ font-size: 1.4rem;
+ font-family: Impact, sans-serif;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: 0.1s linear;
+ letter-spacing: 0.05em;
+ }
+ .btn-raw:hover, .btn-raw:focus {
+ background: #fff;
+ color: #000;
+ border-color: #ff3b00;
+ transform: scale(0.95) rotate(-1deg);
+ }
+
+ .btn-outline {
+ display: inline-block;
+ background: transparent;
+ color: #fff;
+ border: 4px solid #fff;
+ padding: 14px 40px;
+ font-size: 1.2rem;
+ font-family: Impact, sans-serif;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: 0.1s linear;
+ }
+ .btn-outline:hover {
+ background: #ff3b00;
+ border-color: #ff3b00;
+ color: #000;
+ }
+
+ /* HERO */
+ .hero {
+ position: relative;
+ padding: 120px 72px 80px;
+ min-height: 80vh;
+ display: flex;
+ align-items: center;
+ overflow: hidden;
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -100px; right: -100px;
+ width: 600px; height: 600px;
+ background: radial-gradient(circle, rgba(255,59,0,0.3) 0%, transparent 70%);
+ pointer-events: none;
+ z-index: 0;
+ }
+ .hero-content { position: relative; z-index: 1; }
+ .hero h1 span { display: block; }
+ .hero .tagline {
+ font-size: 1.6rem;
+ font-family: 'Courier New', monospace;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ margin: 24px 0 40px;
+ border-left: 6px solid #ff3b00;
+ padding-left: 24px;
+ }
+ @media (max-width: 768px) {
+ .hero { padding: 80px 24px 60px; min-height: 60vh; }
+ .hero .tagline { font-size: 1.2rem; }
+ }
+
+ /* NAV */
+ nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 24px 72px;
+ border-bottom: 4px solid #ff3b00;
+ position: relative;
+ z-index: 100;
+ background: #000;
+ }
+ nav .logo {
+ font-size: 2rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #ff3b00;
+ }
+ nav .nav-links { display: flex; gap: 48px; align-items: center; }
+ nav .nav-links a {
+ font-family: 'Courier New', monospace;
+ font-size: 1.1rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ padding: 4px 0;
+ border-bottom: 2px solid transparent;
+ transition: 0.1s;
+ }
+ nav .nav-links a:hover { border-bottom-color: #ff3b00; color: #ff3b00; }
+ .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; background: none; border: none; padding: 8px; }
+ .hamburger span { display: block; width: 32px; height: 4px; background: #fff; transition: 0.2s; }
+ @media (max-width: 768px) {
+ nav { padding: 20px 24px; }
+ .hamburger { display: flex; }
+ nav .nav-links {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: #000;
+ border-bottom: 4px solid #ff3b00;
+ flex-direction: column;
+ padding: 24px;
+ gap: 24px;
+ text-align: center;
+ }
+ nav .nav-links.open { display: flex; }
+ }
+
+ /* SECTION */
+ section { padding: 72px; }
+ @media (max-width: 768px) { section { padding: 40px 24px; } }
+
+ .section-label {
+ font-family: 'Courier New', monospace;
+ font-size: 0.9rem;
+ letter-spacing: 0.2em;
+ color: #ff3b00;
+ text-transform: uppercase;
+ margin-bottom: 16px;
+ border-bottom: 2px solid #ff3b00;
+ display: inline-block;
+ padding-bottom: 4px;
+ }
+
+ /* CARD BRUTALIST */
+ .card-brutal {
+ background: #111;
+ border: 4px solid #fff;
+ padding: 40px;
+ transition: 0.1s;
+ }
+ .card-brutal:hover { border-color: #ff3b00; transform: skew(1deg); }
+ .card-brutal h3 { font-size: 2rem; margin-bottom: 16px; }
+ .card-brutal p { font-size: 1rem; }
+
+ /* REVIEW CARDS */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 48px;
+ margin-top: 48px;
+ }
+ .review-card {
+ background: #000;
+ border: 4px solid #fff;
+ padding: 32px;
+ position: relative;
+ transform: rotate(-0.5deg);
+ }
+ .review-card:nth-child(odd) { transform: rotate(1deg); }
+ .review-card:hover { border-color: #ff3b00; }
+ .review-card .stars { color: #ff3b00; font-size: 1.6rem; letter-spacing: 4px; margin-bottom: 12px; }
+ .review-card blockquote { font-style: normal; margin: 16px 0; }
+ .review-card .meta { font-family: 'Courier New', monospace; font-size: 0.85rem; color: #888; display: flex; justify-content: space-between; }
+
+ /* FOOTER */
+ footer {
+ padding: 72px;
+ border-top: 4px solid #ff3b00;
+ background: #0a0a0a;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ gap: 24px;
+ }
+ footer .copyright { font-size: 1rem; }
+ footer .phone { font-size: 1.6rem; font-family: 'Courier New', monospace; color: #ff3b00; }
+ @media (max-width: 768px) { footer { padding: 40px 24px; flex-direction: column; text-align: center; } }
+
+ /* MISC */
+ .texture-raw {
+ background-image: repeating-linear-gradient(45deg, rgba(255,59,0,0.03) 0px, rgba(255,59,0,0.03) 2px, transparent 2px, transparent 4px);
+ }
+ .glow-accent { text-shadow: 0 0 20px rgba(255,59,0,0.6); }
+ .border-dashed-accent { border: 3px dashed #ff3b00; }
+ .overflow-hidden { overflow: hidden; }
+ .mt-48 { margin-top: 48px; }
+ .mt-72 { margin-top: 72px; }
+ .mb-48 { margin-bottom: 48px; }
+ .text-center { text-align: center; }
+ .flex-wrap { display: flex; flex-wrap: wrap; }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-481">
+  <meta property="og:description" content="sf-t3-1779642675702-481에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-481.maphoshirts.today/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <nav>
+ <div class="logo">⚡PBN<small class="mono color-accent">_WARM</small></div>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('open')">
+ 
+ </button>
+ <ul class="nav-links">
+ <li><a href="#hero">홈</a></li>
+ <li><a href="#service">서비스</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ 
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-002-1l1y5t6.html">PBN 빌더 vs PBN 빌더 비교</a>
+        <p class="post-item__summary">온라인 마케팅과 검색 엔진 최적화 전략에서 서버 웜업은 매우 중요한 기초 작업입니다. 특히 마포 지역에서 디지털 자산을 구축하려는 기업들에게 적절한 PBN 빌더를 선택하는 것은 효율적인 성과를 내기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-001-1iz1djz.html">PBN 빌더 현장에서 놓치기 쉬운 포인트를 기록해봤다</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-816.html">마포 서버 웜업: 실체와 허상</a>
+        <p class="post-item__summary">마포 서버 웜업은 단순한 기술 점검 이상이다. 새로 준비된 인프라에 웹사이트를 안착시키고, 검색 엔진에 신뢰할 수 있는 독립적인 존재로 각인시키는 초기 과정으로 이해해야 한다. 이 단계를 불필요한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0018.html">PBN 빌더로 빠른 서버 웜업을 달성하다</a>
+        <p class="post-item__summary">PBN 빌더는 검색엔진 최적화에 특화된 블로그 네트워크를 신속하게 구축해 줍니다. 디지털 마케팅 담당자라면 한 번에 여러 도메인에 콘텐츠를 배포할 수 있어 외부 인지도를 한층 높일 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0019.html">PBN 빌더라면 서버 웜업을 어떻게 준비해야 할까</a>
+        <p class="post-item__summary">PBN 빌더에게 서버 웜업은 초기 안정성을 결정짓는 중요한 단계로 꼽힌다. 사이트 운영을 본격적으로 시작하기 전 트래픽 패턴을 자연스럽게 만드는 과정이 필요하다. 특히 마포 지역에서 새로운 프로젝트</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0020.html">PBN 빌더로 마포 지역에 득실을 주다</a>
+        <p class="post-item__summary">PBN 빌더는 독특한 합성 네트워크 구조를 제공해 검색엔진에서 높은 가시성을 확보하는 데 핵심 역할을 한다. 마포 지역에서 운영되는 서버 웜업과 결합하면 초기 트래픽 부스트가 빠르게 증폭된다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0021.html">마포에서 PBN 빌더로 서버 웜업 시작하기</a>
+        <p class="post-item__summary">PBN 빌더를 운영하려면 서버 웜업이 필수다. 아무리 좋은 콘텐츠를 만들어도 서버 응답 속도가 느리면 의미가 반감된다. 마포 지역에서 PBN 인프라를 준비 중이라면, 초기 트래픽 패턴과 서버 부하 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0022.html">PBN 빌더가 여는 마포 SEO 전략</a>
+        <p class="post-item__summary">PBN 빌더는 웹사이트 운영자가 손쉽게 품질 높은 백링크 네트워크를 구축할 수 있게 돕는 플랫폼입니다. 자동화된 프로세스와 사용자 친화적 UI 덕분에 복잡한 작업이 간단히 처리됩니다. 결과적으로 S</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0023.html">PBN 빌더로 서버 웜업 자동화하기</a>
+        <p class="post-item__summary">PBN 사이트를 운영할 때 가장 신경 쓰이는 부분 중 하나는 바로 초기 인덱싱이다. 검색 엔진은 갑자기 등장한 사이트를 의심하는 경향이 있기 때문에, 서버 웜업을 통해 트래픽을 점진적으로 늘리는 전</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0024.html">PBN 빌더가 제공하는 마포 디지털 전략</a>
+        <p class="post-item__summary">PBN 빌더를 활용한 디지털 마케팅 솔루션은 블로그와 홈페이지를 집중적으로 강화시켜줍니다. SEO 최적화를 위해 자체 콘텐츠를 체계적으로 배포하고 내부 링크를 풍부하게 연결합니다. 결과적으로 검색엔</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0025.html">PBN 빌더, 마포에서 서버 웜업을 시작하며 얻은 인사이트</a>
+        <p class="post-item__summary">PBN 운영에서 서버 웜업은 단순한 기술 작업이 아니라 검색엔진의 신뢰를 얻기 위한 첫 단계다. 마포에서 PBN 빌더를 운영하며 깨달은 점은, 초기 사이트가 자연스러운 온도와 활동 이력을 갖추는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0026.html">마포에서 점점 확산되는 PBN 빌더의 서버 웜업 전략</a>
+        <p class="post-item__summary">PBN 빌더는 마포 지역에서 서버 웜업을 담당하며, 중복 도메인 없이 빠른 트래픽 회복을 지원합니다. 이러한 시스템은 특히 신규 블로그와 쇼핑몰이 정밀한 색다른 키워드에 노출될 수 있게 만듭니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0027.html">마포에서 PBN 빌더로 서버 웜업 시작하기</a>
+        <p class="post-item__summary">PBN 빌더는 사이트 운영의 기초를 다지는 과정에서 중요한 역할을 한다. 특히 서버 웜업 단계에서는 일정한 트래픽 패턴과 안정적인 응답 속도를 확보하는 것이 핵심이다. 마포 지역에서 이 작업을 진행</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0028.html">마포에서 PBN 빌더로 비즈니스 성장 가속화</a>
+        <p class="post-item__summary">마포의 데이터 센터가 제공하는 안정적인 인프라 위에서 PBN 빌더는 신규 사이트 구축과 운영 관리의 부담을 크게 덜어주는 솔루션입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0029.html">PBN 빌더를 활용한 서버 웜업, 마포에서 주목받는 이유</a>
+        <p class="post-item__summary">서버 웜업은 사이트 운영의 기초 체력을 만드는 중요한 과정입니다. 마포 지역에서도 이 작업의 필요성을 인식하고 준비하는 곳이 점점 늘어나고 있습니다. 안정적인 운영 환경을 갖추기 위해서는 초기 단계</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0030.html">PBN 빌더로 마포에서 찾은 최고의 가라오케 공간</a>
+        <p class="post-item__summary">마포 지역에서 PBN 빌더를 활용해 가라오케 공간을 찾는 과정은 처음에는 조금 헷갈릴 수 있다. 하지만 서버 웜업 서비스를 이용하면 데이터와 사용자 리뷰를 한눈에 정리해 주기 때문에 더 효율적으로 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0031.html">마포 PBN 빌더 서버 웜업, 운영 안정성을 높이는 접근법</a>
+        <p class="post-item__summary">PBN 빌더를 운영할 때 서버 웜업이 왜 중요한지 경험하게 되는 순간이 많다. 새로 띄운 사이트가 검색 엔진에서 일정한 평가를 받기까지는 응답 속도와 방문자 흐름을 안정적으로 유지하는 과정이 필수다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0032.html">마포에서 PBN 빌더로 웹 존재감을 높이는 전략</a>
+        <p class="post-item__summary">PBN 빌더는 검색 엔진 상위 노출을 위한 체계적인 도메인 네트워크를 구축해 줍니다. 마포 지역에서 제공되는 도메인 옵션이 다양해 변동성이 적으면서도 비용 효율적인 선택이 가능합니다. 이 과정에서 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0033.html">마포에서 서버 웜업 운영하며 써본 PBN 빌더 후기</a>
+        <p class="post-item__summary">PBN 빌더는 구축 과정에서 사이트 수가 늘어날수록 서버 리소스 효율이 중요해진다. 마포에서 서버 웜업을 직접 운영하면서 느낀 점은, 초기 세팅보다 장기적인 유지보수와 속도 관리가 사이트 성과를 좌</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0034.html">마포에서 시작하는 PBN 빌더 활용법</a>
+        <p class="post-item__summary">PBN 빌더는 마포 지역의 서버 웜업 작업을 한층 수월하게 만들어 줍니다. 복잡한 DNS 설정부터 링크 구조까지 한 번에 처리하며, 신규 도메인에 소셜 신호를 즉시 주입합니다.</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
