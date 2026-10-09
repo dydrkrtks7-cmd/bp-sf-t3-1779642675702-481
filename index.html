@@ -3,19 +3,19 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>서버 웜업 PBN 빌더, 마포 직영</title>
- <meta name="description" content="마포 지역 서버 웜업 & PBN 빌더. 24시간 콜드 스타트 제거, 글로벌 노드 웜업. 10년차 네트워크 엔지니어가 직접 설계. 결과로 말한다. 지금 전화하라.">
- <meta name="keywords" content="서버 웜업, PBN 빌더, 마포 서버, 웜업 서비스, 콜드 스타트, 네트워크 최적화, sf-t3-1779642675702-481">
+ <title>웹 배포·응답 관측과 색인 분리 점검 기록 | 기술 메모</title>
+ <meta name="description" content="웹 배포·응답·검색 봇 관측·색인 결과를 분리해 읽는 기술 기록 블로그의 시각으로, 기존 글의 질문을 독자가 사용할 판단과 기록 방법으로 연결합니다.">
+ <meta name="keywords" content="웹 배포 관측, 응답 속도, 검색 봇 로그, 색인 점검, 서버 웜업 관측, 기술 메모">
  <link rel="canonical" href="https://mapo-web-note.maphoshirts.today/">
- <meta property="og:title" content="서버 웜업 PBN 빌더, 마포 직영">
- <meta property="og:description" content="마포 지역 서버 웜업 &amp; PBN 빌더. 24시간 콜드 스타트 제거, 글로벌 노드 웜업. 10년차 네트워크 엔지니어가 직접 설계. 결과로 말한다. 지금 전화하라.">
+ <meta property="og:title" content="웹 배포·응답 관측과 색인 분리 점검 기록 | 기술 메모">
+ <meta property="og:description" content="웹 배포·응답·검색 봇 관측·색인 결과를 분리해 읽는 기술 기록 블로그의 시각으로, 기존 글의 질문을 독자가 사용할 판단과 기록 방법으로 연결합니다.">
  <meta property="og:url" content="https://mapo-web-note.maphoshirts.today/">
  <meta property="og:type" content="website">
  <meta property="og:locale" content="ko_KR">
- <meta property="og:site_name" content="서버 웜업 PBN">
+ <meta property="og:site_name" content="배포·관측 기술 메모">
  <meta name="twitter:card" content="summary">
- <meta name="twitter:title" content="서버 웜업 PBN 빌더 | 마포 직영">
- <meta name="twitter:description" content="24시간 콜드 스타트 제거. 마포 본사 직영 PBN 빌더.">
+ <meta name="twitter:title" content="웹 배포·응답 관측과 색인 분리 점검 기록 | 기술 메모">
+ <meta name="twitter:description" content="웹 배포·응답·검색 봇 관측·색인 결과를 분리해 읽는 기술 기록 블로그의 시각으로, 기존 글의 질문을 독자가 사용할 판단과 기록 방법으로 연결합니다.">
  
  <style>
  /* RESET + BASE */
@@ -282,6 +282,8 @@
  .flex-wrap { display: flex; flex-wrap: wrap; }
  </style>
  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://mapo-web-note.maphoshirts.today/","name":"웹 배포·응답 관측과 색인 분리 점검 기록 | 기술 메모","description":"웹 배포·응답·검색 봇 관측·색인 결과를 분리해 읽는 기술 기록 블로그의 시각으로, 기존 글의 질문을 독자가 사용할 판단과 기록 방법으로 연결합니다.","dateModified":"2026-10-09T11:17:04.819Z"}</script>
+<style id="home-meaning-reader-style">main{overflow-wrap:anywhere}.home-original-context{margin:1rem;padding:1rem;border-left:3px solid #64748b;line-height:1.7}.home-reader-links{display:flex!important;gap:1rem;flex-wrap:wrap}main p{margin-bottom:1em}main ul{margin:1em 0;padding-left:1.4em}@media(max-width:600px){main .container{width:100%;max-width:100%;padding:24px 16px}.home-reader-links{font-size:.9rem}}</style>
 <style data-post-index-reader-style="true">
 div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; padding:12px 20px; text-align:right; }
 div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; color:inherit; text-decoration:none; }
@@ -293,66 +295,65 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
  <!-- HEADER / NAV -->
  <header>
  <nav>
- <div class="logo">⚡PBN<small class="mono color-accent">_WARM</small></div>
+ <div class="logo">⚡OBSERVE<small class="mono color-accent">_LOG</small></div>
  <button class="hamburger" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('open')">
  
  </button>
  <ul class="nav-links">
  <li><a href="#hero">홈</a></li>
- <li><a href="#service">서비스</a></li>
- <li><a href="#reviews">리뷰</a></li>
- 
+ <li><a href="#service">관측 기준</a></li>
+ <li><a href="#reviews">기록과 후기</a></li>
  </ul>
  </nav>
  </header>
 
- <main>
+ <main data-home-feed="curated" data-t3-home-meaning="true">
  <!-- HERO -->
  <section id="hero" class="hero full-bleed texture-raw">
  <div class="hero-content">
  <h1>
- <span class="glow-accent">서버 웜업</span>
- <span class="color-accent">PBN 빌더</span>
+ <span class="glow-accent">배포와 응답</span>
+ <span class="color-accent">관측 분리 노트</span>
  </h1>
  <div class="tagline">
- 🔥 콜드 스타트? <span class="color-accent">죽인다.</span><br>
- 마포 본사 직영 · 24시간 글로벌 웜업
+ 막연한 지연 불안 대신 <span class="color-accent">로그를 쪼갠다.</span><br>
+ 배포 완료 · 브라우저 응답 · 봇 접근 · 색인 주기 분리 기록
  </div>
  
- <p class="mono" style="margin-top:24px; font-size:0.9rem; color:#888;">slug: sf-t3-1779642675702-481</p>
+ <p class="mono" style="margin-top:24px; font-size:0.9rem; color:#888;">기록 영역: 배포 상태 및 검색 크롤러 관측 데이터</p>
  </div>
  </section>
 
  <!-- 서비스 소개 - ASYMMETRIC -->
  <section id="service" class="full-bleed section-gap">
  <div class="pad-72">
- <span class="section-label">// 서비스</span>
- <h2 class="color-accent" style="margin-bottom:48px;">더 이상 <span style="text-decoration: line-through;">기다리지</span> 마라</h2>
+ <span class="section-label">// 관측 지점</span>
+ <h2 class="color-accent" style="margin-bottom:48px;">현상을 <span style="text-decoration: line-through;">뭉뚱그리지</span> 마라</h2>
  <div class="asymmetric">
  <div class="card-brutal overlap-right">
- <h3>⚡ 서버 웜업</h3>
- <p>콜드 스타트 제거. 글로벌 12개 노드에서 24시간 프리워밍. 너의 서버는 항상 뜨겁다. 결과는 0.3초 미만 응답.</p>
+ <h3>⚡ 배포와 초기 응답</h3>
+ <p>빌드가 완료된 시점과 브라우저의 첫 바이트 수신 시간은 다르다. 캐시를 걷어낸 원본 상태와 네트워크 지연을 분리해서 적는다.</p>
  </div>
  <div class="card-brutal border-accent" style="background:#0d0d0d;">
- <h3>🧩 PBN 빌딩</h3>
- <p>죽은 링크는 없다. 우리가 직접 설계한 PBN 네트워크. 마포 데이터센터 기반, 10년차 엔지니어가 만든다.</p>
+ <h3>🧩 봇 수집과 색인 주기</h3>
+ <p>검색 로봇이 URL을 긁어간 시각과 검색 데이터베이스에 반영되는 순간은 저마다 시계가 다르다. 로그와 콘솔 상태를 따로 대조한다.</p>
  </div>
  </div>
  <div class="asymmetric mt-72">
  <div class="card-brutal border-dashed-accent rotate-neg" style="background:#0a0a0a;">
- <h3>🌐 네트워크 최적화</h3>
- <p>라우팅, DNS, CDN 전략까지. 너의 사이트가 느리다면? <span class="color-accent">우리 탓이 아니다. 너의 선택이 문제다.</span></p>
+ <h3>🌐 인프라와 관측 지표</h3>
+ <p>DNS 전파, 캐시 계층, 서버 초기화 상태를 구분한다. 막연히 코드를 뜯어고치기 전에 어느 구간의 대기인지 타임스탬프를 남긴다.</p>
  </div>
  <div class="card-brutal skew-2" style="background:#111;">
- 
- <p>상담은 무료다. 하지만 너의 시간은 유료다. <span class="color-accent">지금 전화해라.</span> 마포 본사 직통.</p>
+ <h3>📝 기록의 기준</h3>
+ <p>추측으로 시간을 낭비하지 않는다. 확인한 URL, 측정 일시, 상태 코드를 텍스트로 남겨야 불필요한 설정 변경을 줄인다.</p>
  </div>
  </div>
  </div>
  </section>
 
  <!-- UGC 리뷰 -->
- <section id="reviews" class="full-bleed section-gap">
+ <section id="reviews" class="full-bleed section-gap"><p class="home-original-context">아래는 원래 제공받은 서비스 후기와 평가 자료입니다. 당시 작성자·날짜·표현을 보존합니다. 이 글의 관측 방법이 해당 실적을 독립적으로 측정했다거나, 현재 블로그가 데이터센터/직영 서비스를 제공한다는 새 주장으로 합산하지 않습니다.</p>
  <div class="pad-72" style="background:#050505; border-top:4px solid #ff3b00; border-bottom:4px solid #ff3b00;">
  <span class="section-label">// REAL TALK</span>
  <h2 class="glow-accent">고객이 말한다.<br><span class="color-accent">결과는 숫자로 증명</span></h2>
@@ -389,14 +390,14 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
 
  <!-- CTA / 전화 -->
  <section class="full-bleed texture-raw text-center" style="padding:100px 72px;">
- <h2 class="color-accent glow-accent">지금 당장 워밍업하라.</h2>
+ <h2 class="color-accent glow-accent">추측 대신 기록을 남겨라</h2>
  <p style="font-size:1.4rem; margin:24px 0 40px; font-family:'Courier New', monospace;">
- 콜드 스타트는 <span class="color-accent">적이다.</span> 죽여라.
+ 모호한 지연 불안은 <span class="color-accent">로그 앞에서</span> 가라앉는다.
  </p>
  
- <p class="mono" style="margin-top:24px; color:#666;">마포 본사 · 24시간 · slug: sf-t3-1779642675702-481</p>
+ <p class="mono" style="margin-top:24px; color:#666;">배포 상태 · 브라우저 응답 · 수집 로그 · 색인 주기 기록</p>
  </section>
- </main>
+ <p class="home-original-context">이전에 연결한 관련 글: <a href="posts/guide-002-1iz1djz.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a></p></main>
 
  <!-- FOOTER -->
  
@@ -405,31 +406,11 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
 
 
 <!-- PBN Recent Posts Feed Section -->
-<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
- <div style="max-width:1100px;margin:0 auto">
- <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
- <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
- 
- 
- 
- <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-<div>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
-<span> GUIDE</span>
-<time datetime="2026-06-15">2026-06-15</time>
-</div>
-<h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">서버 웜업 해결 방법 총정리 — 전문가가 알려주는 5가지 팁</h4>
- 
-</div>
-<a href="posts/guide-002-1iz1djz.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
-</article>
- </div>
- </div>
-</section>
+
 <footer>
  <div>
- <p class="copyright">© 2025 서버 웜업 PBN 빌더. All rights reserved.</p>
- <p class="mono" style="color:#666; font-size:0.85rem;">마포구 · PBN &amp; 웜업 전문 · sf-t3-1779642675702-481</p>
+ <p class="copyright">© 2025 배포·관측 기술 기록 노트. All rights reserved.</p>
+ <p class="mono" style="color:#666; font-size:0.85rem;">웹 배포 현황 및 검색 엔진 관측 로그 기록</p>
  </div>
  
  </footer>
